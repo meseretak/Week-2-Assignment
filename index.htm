@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Form Example</title>
+  <meta name="description" content="An enhanced HTML5 form showcasing semantic structure, media, lists, tables, and validation." />
+</head>
+<body>
+  <header>
+    <h1>Enhanced Form with Semantic HTML5</h1>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#form-section">Form</a></li>
+        <li><a href="#media-section">Media</a></li>
+        <li><a href="#info-section">Info</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="info-section">
+      <h2>Product Features</h2>
+      <ul>
+        <li>Easy to use</li>
+        <li>Fast performance</li>
+        <li>Secure and reliable</li>
+      </ul>
+
+      <h3>Pricing Table</h3>
+      <table border="1" summary="Pricing plans and features">
+        <caption>Pricing Plans</caption>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Price</th>
+            <th>Storage</th>
+            <th>Support</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>$5/month</td>
+            <td>10GB</td>
+            <td>Email support</td>
+          </tr>
+          <tr>
+            <td>Pro</td>
+            <td>$15/month</td>
+            <td>100GB</td>
+            <td>24/7 phone & email</td>
+          </tr>
+          <tr>
+            <td>Enterprise</td>
+            <td>Contact us</td>
+            <td>Unlimited</td>
+            <td>Dedicated support</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="media-section" aria-label="Media content">
+      <h2>Media Showcase</h2>
+      <figure>
+        <img src="https://via.placeholder.com/400x200" alt="Sample product image" width="400" height="200" />
+        <figcaption>Product preview image</figcaption>
+      </figure>
+
+      <figure>
+        <video controls width="400" aria-label="Demo video of product features">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          Sorry, your browser does not support the video tag.
+        </video>
+        <figcaption>Product demo video</figcaption>
+      </figure>
+    </section>
+
+    <section id="form-section">
+      <h2>Registration Form</h2>
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="firstName">First Name: <sup>*</sup></label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter your first name"
+            autocomplete="given-name"
+            required
+          />
+          <br /><br />
+
+          <label for="lastName">Last Name: <sup>*</sup></label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Enter your last name"
+            autocomplete="family-name"
+            required
+          />
+          <br /><br />
+
+          <label for="email">Email: <sup>*</sup></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="email@example.com"
+            autocomplete="email"
+            required
+          />
+          <br /><br />
+
+          <label for="age">Age:</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            min="1"
+            max="120"
+            placeholder="e.g., 25"
+            autocomplete="off"
+          />
+          <br /><br />
+
+          <label for="username">Username: <sup>*</sup></label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Choose a username"
+            pattern="[A-Za-z0-9_-]{5,15}"
+            title="5 to 15 characters: letters, numbers, _ or -"
+            required
+            autocomplete="username"
+          />
+          <br /><br />
+
+          <label for="password">Password: <sup>*</sup></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Create a password"
+            minlength="8"
+            required
+            autocomplete="new-password"
+          />
+          <br /><br />
+
+          <label for="confirmPassword">Confirm Password: <sup>*</sup></label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            placeholder="Re-enter your password"
+            minlength="8"
+            required
+            autocomplete="new-password"
+          />
+          <br /><br />
+
+          <label for="bio">Short Bio:</label><br />
+          <textarea
+            id="bio"
+            name="bio"
+            rows="4"
+            cols="40"
+            placeholder="Tell us about yourself"
+            maxlength="500"
+          ></textarea>
+          <br /><br />
+
+          <label for="country">Country: <sup>*</sup></label>
+          <select id="country" name="country" required autocomplete="country">
+            <option value="">Select your country</option>
+            <option value="ET">Ethiopia</option>
+            <option value="US">United States</option>
+            <option value="GB">United Kingdom</option>
+            <option value="IN">India</option>
+          </select>
+          <br /><br />
+
+          <fieldset>
+            <legend>Interests</legend>
+            <input type="checkbox" id="news" name="interests" value="news" />
+            <label for="news">Newsletters</label><br />
+
+            <input type="checkbox" id="updates" name="interests" value="updates" />
+            <label for="updates">Product Updates</label><br />
+
+            <input type="checkbox" id="offers" name="interests" value="offers" />
+            <label for="offers">Special Offers</label>
+          </fieldset>
+          <br />
+
+          <fieldset>
+            <legend>Gender</legend>
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label><br />
+
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label><br />
+
+            <input type="radio" id="other" name="gender" value="other" />
+            <label for="other">Other</label>
+          </fieldset>
+          <br />
+
+          <label for="profilePic">Upload Profile Picture:</label>
+          <input type="file" id="profilePic" name="profilePic" accept="image/*" />
+          <br /><br />
+
+          <label for="referrer">How did you hear about us?</label>
+          <input
+            type="text"
+            id="referrer"
+            name="referrer"
+            placeholder="Friend, online ad, etc."
+            autocomplete="off"
+            readonly
+            value="Online campaign"
+          />
+          <br /><br />
+
+          <button type="submit">Register</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enhanced Forms, Inc. with meseret ak</p>
+  </footer>
+</body>
+</html>
